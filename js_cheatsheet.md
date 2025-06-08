@@ -205,29 +205,27 @@ Boolean(0); // false
 
 # 🟦 12. Common Built-in Methods
 
-| Category   | Method Example   | Description                         |
-| ---------- | ---------------- | ----------------------------------- |
-| Type Check | `typeof "hello"` | Returns the type (e.g., `"string"`) |
-
-j
-| Array | `array.push("x")` | Add to end of array |
-| | `array.pop()` | Remove from end |
-| | `array.shift()` | Remove from start |
-| | `array.unshift("x")` | Add to start |
-| | `array.includes("x")` | Check if value exists in array |
-| | `array.join(", ")` | Join array elements into a string |
-| | `array.reverse()` | Reverse the array in place |
-| String | `"hi".toUpperCase()` | → `"HI"` (convert to uppercase) |
-| | `"HELLO".toLowerCase()` | → `"hello"` (convert to lowercase) |
-| | `"hello".slice(1, 3)` | → `"el"` (substring from index 1 to 3) |
-| | `"a,b,c".split(",")` | → `["a", "b", "c"]` (split string to array) |
-| | `"hello".includes("ell")` | → `true` (check if substring exists) |
-| Math | `Math.random()` | Random number between 0 and 1 |
-| | `Math.floor(4.9)` | Round down → `4` |
-| | `Math.ceil(4.1)` | Round up → `5` |
-| | `Math.round(4.6)` | Round to nearest → `5` |
-| | `Math.max(1, 2, 3)` | Find max → `3` |
-| | `Math.min(1, 2, 3)` | Find min → `1` |
+| Category   | Method Example            | Description                                 |
+| ---------- | ------------------------- | ------------------------------------------- |
+| Type Check | `typeof "hello"`          | Returns the type (e.g., `"string"`)         |
+| Array      | `array.push("x")`         | Add to end of array                         |
+|            | `array.pop()`             | Remove from end                             |
+|            | `array.shift()`           | Remove from start                           |
+|            | `array.unshift("x")`      | Add to start                                |
+|            | `array.includes("x")`     | Check if value exists in array              |
+|            | `array.join(", ")`        | Join array elements into a string           |
+|            | `array.reverse()`         | Reverse the array in place                  |
+| String     | `"hi".toUpperCase()`      | → `"HI"` (convert to uppercase)             |
+|            | `"HELLO".toLowerCase()`   | → `"hello"` (convert to lowercase)          |
+|            | `"hello".slice(1, 3)`     | → `"el"` (substring from index 1 to 3)      |
+|            | `"a,b,c".split(",")`      | → `["a", "b", "c"]` (split string to array) |
+|            | `"hello".includes("ell")` | → `true` (check if substring exists)        |
+| Math       | `Math.random()`           | Random number between 0 and 1               |
+|            | `Math.floor(4.9)`         | Round down → `4`                            |
+|            | `Math.ceil(4.1)`          | Round up → `5`                              |
+|            | `Math.round(4.6)`         | Round to nearest → `5`                      |
+|            | `Math.max(1, 2, 3)`       | Find max → `3`                              |
+|            | `Math.min(1, 2, 3)`       | Find min → `1`                              |
 
 # 13. Ternary Operator
 
