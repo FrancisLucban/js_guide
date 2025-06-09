@@ -358,3 +358,33 @@ getRest();
 - `washCar()` - returns a promise that takes 2 seconds.
 - `await cleanRoom()` - pauses and waits for the result.
 - `try {...} catch {...}` is used to handle success or failure.
+
+## 18. Debouncing
+
+To avoid wasting water and soap when lots of cars try to start the wash too quickly.
+Just like in websites, we use debouncing to avoid doing the same thing over and over
+too fast.
+
+```js
+function washCar() {
+    console.log(`Washing the car now...`);
+}
+
+function debounce(func, delay) {
+    let timer;
+    return function(..args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+            func.apply(this, args);
+        }, delay),;
+    };
+}
+
+// create a smart car wash button
+const debouncedWashCar = debounce(washCar, 2000);
+
+// simulate car pressing the button rapidly
+debouncedWashCar(); // Car pressed
+debouncedWashCar(); // Another car pressed
+debouncedWashCar(); // Another press
+```
