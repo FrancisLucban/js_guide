@@ -1,4 +1,6 @@
-# 🟦 1. Declaring Variables
+# JavaScript Cheatsheet
+
+## 🟦 1. Declaring Variables
 
 ```js
 const name = "Alice"; // Constant (cannot be reassigned)
@@ -6,7 +8,7 @@ let age = 25; // Variable (can be reassigned)
 // var (old, avoid using in modern JS)
 ```
 
-# 🟦 2. Printing to Console
+## 🟦 2. Printing to Console
 
 ```js
 console.log("Hello, world!");
@@ -19,7 +21,7 @@ console.log("Hello, world!");
 npm init -y
 ```
 
-# 🟦 3. Data Types
+## 🟦 3. Data Types
 
 ```js
 // String
@@ -38,7 +40,7 @@ let empty = null;
 let something;
 ```
 
-# 🟦 4. Conditionals
+## 🟦 4. Conditionals
 
 ### ➤ Standard
 
@@ -58,7 +60,7 @@ if (score > 90) {
 condition ? true : false;
 ```
 
-# 🟦 5. Comparison Operators
+## 🟦 5. Comparison Operators
 
 ```js
 ===   // equal value & type
@@ -69,7 +71,7 @@ condition ? true : false;
 <=    // less or equal
 ```
 
-# 🟦 6. Logical Operators
+## 🟦 6. Logical Operators
 
 ```js
 &&  // and
@@ -77,7 +79,7 @@ condition ? true : false;
 !   // not
 ```
 
-# 🟦 7. Special Operators
+## 🟦 7. Special Operators
 
 | Operator     | Name                           | Description / Example                                                               |
 | ------------ | ------------------------------ | ----------------------------------------------------------------------------------- |
@@ -114,7 +116,7 @@ function sum(...nums) {
 sum(1, 2, 3); // 6
 ```
 
-# 🟦 8. Loops
+## 🟦 8. Loops
 
 ### 🔁 For loop
 
@@ -143,7 +145,7 @@ for (const fruit of fruits) {
 }
 ```
 
-# 🟦 9. Functions
+## 🟦 9. Functions
 
 ### ➤ Function Declaration
 
@@ -159,7 +161,7 @@ function greet(name) {
 const greet = (name) => "Hello, " + name;
 ```
 
-# 🟦 10. Arrays
+## 🟦 10. Arrays
 
 ```js
 const colors = ["red", "green", "blue"];
@@ -172,7 +174,7 @@ colors.unshift("purple"); // Add to start
 console.log(colors.length); // Get length
 ```
 
-# 🟦 11. Strings
+## 🟦 11. Strings
 
 ```js
 const str = "JavaScript";
@@ -186,7 +188,7 @@ str.slice(0, 4); // "Java"
 str.split(""); // ["J","a","v",...]
 ```
 
-# 🟦 12. Objects
+## 🟦 12. Objects
 
 ```js
 const user = {
@@ -200,7 +202,7 @@ user.age = 30; // Update property
 user.email = "a@b.com"; // Add new property
 ```
 
-# 🟦 13. Typecasting
+## 🟦 13. Typecasting
 
 ### 🔹 To String
 
@@ -240,7 +242,7 @@ Boolean(0); // false
 !!"hello"; // true
 ```
 
-# 🟦 14. Common Built-in Methods
+## 🟦 14. Common Built-in Methods
 
 | Category   | Method Example            | Description                                 |
 | ---------- | ------------------------- | ------------------------------------------- |
@@ -264,7 +266,7 @@ Boolean(0); // false
 |            | `Math.max(1, 2, 3)`       | Find max → `3`                              |
 |            | `Math.min(1, 2, 3)`       | Find min → `1`                              |
 
-# 15. Optional Chaining
+## 15. Optional Chaining
 
 ```js
 const user = { profile: { name: "Francis" } };
@@ -273,7 +275,7 @@ console.log(user.profile?.name); // Francis
 console.log(user.address?.country); // undefined
 ```
 
-# 16. IIFE - Immediately Invoked Function Expression
+## 16. IIFE - Immediately Invoked Function Expression
 
 IIFE helps to keep things clean and private the stuff inside the function doesn't mess with
 the rest of your code.
@@ -286,3 +288,73 @@ the rest of your code.
 ```
 
 [IIFE MDN Reference](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+
+## 17. Promises
+
+Promise(s) is something that will happen later, depending on whether it do what is asked.
+
+```js
+let carWash = true;
+
+let getSodaSnacks = new Promise(function (resolve, reject) {
+  if (carWash) {
+    resolve(`You can get some soda, snacks and rest.`);
+  } else {
+    reject(`Wash your car first before you enjoy some snacks and rest.`);
+  }
+});
+
+// Using the promise:
+
+getSodaSnacks
+  .then(function (result) {
+    console.log(result); // If resolved
+  })
+  .catch(function (error) {
+    console.log(error); // If rejected
+  });
+```
+
+#### Code Breakdown:
+
+- `new Promise(...)` - You're asking for something that might happen later.
+- `resolve(...)` - This means, very good! You washed the car.
+- `reject(...)` - This means, no. You didn't washed your car yet.
+- `.then(...)` - This runs if the promise is kept.
+- `.catch(...)` - This runs if the promise is broken.
+
+### Promises with `async/await`
+
+```js
+function washCar() {
+  return new Promise((resolve, reject) => {
+    let washedCar = true;
+
+    setTimeout(() => {
+      if (roomCleaned) {
+        resolve("Car is clean! Get some snacks and rest.");
+      } else {
+        reject("Car is dirty. Don't rest yet.");
+      }
+    }, 2000); // Wait for 2 seconds
+  });
+}
+
+async function getRest() {
+  try {
+    console.log("Washing the car...");
+    const result = await cleanCar(); // Waits for the promise to finish
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+getRest();
+```
+
+#### Code Breakdown:
+
+- `washCar()` - returns a promise that takes 2 seconds.
+- `await cleanRoom()` - pauses and waits for the result.
+- `try {...} catch {...}` is used to handle success or failure.
